@@ -1,0 +1,83 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://www.transparenttextures.com/patterns/clouds.png'); /* Aggiungi un'immagine di nuvole come sfondo */
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Riquadro traslucido */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    max-width: 90%;
+}
+
+h1 {
+    font-size: 36px;
+    color: #1E90FF; /* Colore blu per il titolo */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.data-box {
+    background-color: #f0f8ff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-box span {
+    font-size: 32px;
+    color: #1E90FF;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 1s ease-out;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .data-box {
+        font-size: 18px;
+    }
+}

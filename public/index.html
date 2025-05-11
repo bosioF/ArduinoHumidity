@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dati Arduino</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff; /* Azzurro chiaro */
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://static.brusheezy.com/system/resources/previews/000/024/130/original/cloud-pattern-photoshop-patterns.jpg');
+      background-size: cover;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.8); /* Traslucido */
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 350px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 30px;
+      color: #1E90FF; /* Colore blu per il titolo */
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 22px;
+      margin: 15px 0;
+    }
+
+    .data-box {
+      background-color: #f0f8ff;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .data-box span {
+      font-size: 32px;
+      color: #1E90FF;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 80%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .data-box {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Misuratore Arduino</h1>
+    <div class="data-box">
+      <p>Temperatura: <span id="temperatura">--</span> °C</p>
+    </div>
+    <div class="data-box">
+      <p>Umidità: <span id="umidita">--</span> %</p>
+    </div>
+  </div>
+  <script>
+    async function aggiornaDati() {
+      try {
+        const response = await fetch('/api/dati');
+        if (!response.ok) {
+          console.error('Errore nella risposta della API:', response.statusText);
+          return;
+        }
+        const data = await response.json();
+        console.log('Dati ricevuti:', data); 
+        document.getElementById('temperatura').textContent = data.temperatura || '--'; 
+        document.getElementById('umidita').textContent = data.umidita || '--'; 
+      } catch (error) {
+        console.error('Errore durante l\'aggiornamento dei dati:', error);
+      }
+    }
+
+    setInterval(aggiornaDati, 1000);
+  </script>
+</body>
+</html>
