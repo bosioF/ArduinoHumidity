@@ -18,11 +18,11 @@ let data = {
 parser.on("data", (line) => {
   console.log("Dati ricevuti dalla porta seriale:", line);
   try {
-    const parsedData = JSON.parse(line);  // Parsing dei dati JSON
-    if (parsedData.temperatura && parsedData.umidita) { // Verifica se i dati sono validi
-      data.temperatura = parsedData.temperatura;  // Aggiorna la temperatura
-      data.umidita = parsedData.umidita;  // Aggiorna l'umidità
-      console.log('Dati salvati:', data);  // Verifica i dati salvati
+    const parsedData = JSON.parse(line); 
+    if (parsedData.temperatura && parsedData.umidita) { 
+      data.temperatura = parsedData.temperatura;  
+      data.umidita = parsedData.umidita;  
+      console.log('Dati salvati:', data);  
     }
   } catch (err) {
     console.error('Errore nel parsing dei dati:', err);
@@ -30,12 +30,12 @@ parser.on("data", (line) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html')); // Assicurati che index.html sia nella stessa cartella di server.js
+  res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
 app.get("/api/dati", (req, res) => {
-  console.log("Dati inviati:", data);  // Log per assicurarti che `data` venga restituito correttamente
-  res.json(data);  // Restituisce i dati come JSON
+  console.log("Dati inviati:", data);  
+  res.json(data);  
 });
 
 
