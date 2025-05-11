@@ -37,7 +37,7 @@ Benvenuto nel progetto **Misuratore di Temperatura e Umidità**! Questo sistema 
 ### 2. Configurare il Server
 1. Clona questo repository:
    ```bash
-   git clone https://github.com/tuo-username/misuratore-temperatura
+   git clone https://github.com/bosioF/ArduinoHumidity.git
    cd misuratore-temperatura
 2. Installa le dipendenze:
    ```bash
