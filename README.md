@@ -46,3 +46,7 @@ Benvenuto nel progetto **Misuratore di Temperatura e Umidità**! Questo sistema 
    ```bash
    node server.js
 4. Apri il browser su http://localhost:3000 per visualizzare i dati.
+
+### 🏆 Crediti
+
+La foto di background è stata gentilmente fornita da **[Dexterman](https://www.brusheezy.com/members/dexterman)**.
