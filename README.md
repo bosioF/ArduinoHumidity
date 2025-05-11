@@ -22,11 +22,11 @@ Benvenuto nel progetto **Misuratore di Temperatura e Umidità**! Questo sistema 
 - 🛠️ **Arduino IDE** per upload del codice su Arduino
 - 📦 **Node.js** v16+ per il server
 - 🔗 Libreria `serialport` per la comunicazione seriale
-
+- 🌐 Libreria `express` per il server web
+  
 ---
 
 ## 📋 Installazione
-
 ### 1. Configurare Arduino
 1. Collega il sensore **DHT11** ad Arduino:
    - **Pin 5V** → VCC
@@ -41,7 +41,7 @@ Benvenuto nel progetto **Misuratore di Temperatura e Umidità**! Questo sistema 
    cd misuratore-temperatura
 2. Installa le dipendenze:
    ```bash
-   npm install
+   npm install express serialport
 3. Avvia il server:
    ```bash
    node server.js
