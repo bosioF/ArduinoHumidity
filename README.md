@@ -2,8 +2,6 @@
 
 Benvenuto nel progetto **Misuratore di Temperatura e Umidità**! Questo sistema utilizza un sensore **DHT11**, un **Arduino** e un'applicazione web per monitorare in tempo reale i dati di temperatura e umidità ambientale. 🖥️
 
-![Progetto Arduino](https://via.placeholder.com/800x400) <!-- Sostituisci con uno screenshot o immagine del progetto -->
-
 ## 🚀 Funzionalità
 
 - 📊 **Monitoraggio in tempo reale**: Visualizza temperatura e umidità aggiornate ogni secondo.
@@ -41,3 +39,10 @@ Benvenuto nel progetto **Misuratore di Temperatura e Umidità**! Questo sistema 
    ```bash
    git clone https://github.com/tuo-username/misuratore-temperatura
    cd misuratore-temperatura
+2. Installa le dipendenze:
+   ```bash
+   npm install
+3. Avvia il server:
+   ```bash
+   node server.js
+4. Apri il browser su http://localhost:3000 per visualizzare i dati.
