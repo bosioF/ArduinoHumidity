@@ -16,9 +16,14 @@ let data = {
 };
 
 parser.on("data", (line) => {
+  const cleanedLine = line.trim();
   console.log("Dati ricevuti dalla porta seriale:", line);
+  if (!cleanedLine.startsWith('{') || !cleanedLine.endsWith('}')) {
+        console.error("Messaggio non valido, ignorato");
+        return;
+    }
   try {
-    const parsedData = JSON.parse(line); 
+    const parsedData = JSON.parse(cleanedLine); 
     if (parsedData.temperatura && parsedData.umidita) { 
       data.temperatura = parsedData.temperatura;  
       data.umidita = parsedData.umidita;  
