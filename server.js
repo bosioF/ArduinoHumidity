@@ -7,7 +7,7 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
-const serialPort = new SerialPort({ path: "COM3", baudRate: 9600 });
+const serialPort = new SerialPort({ path: "/dev/ttyACM0", baudRate: 9600 });
 const parser = serialPort.pipe(new ReadlineParser({ delimiter: "\r\n" }));
 
 let data = {
